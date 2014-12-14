@@ -759,7 +759,8 @@ To configure fact caching, enable it in ansible.cfg as follows::
 
     [defaults]
     fact_caching = redis
-    fact_caching_timeout = 86400 # seconds
+    fact_caching_timeout = 86400
+    # seconds
 
 At the time of writing, Redis is the only supported fact caching engine.  
 To get redis up and running, perform the equivalent OS commands::
@@ -971,7 +972,7 @@ If multiple variables of the same name are defined in different places, they win
 
     * extra vars (-e in the command line) always win
     * then comes connection variables defined in inventory (ansible_ssh_user, etc)
-    * then comes "most everything else" (command line switches, vars in play, included vars, etc)
+    * then comes "most everything else" (command line switches, vars in play, included vars, role vars, etc)
     * then comes the rest of the variables defined in inventory
     * then comes facts discovered about a system
     * then "role defaults", which are the most "defaulty" and lose in priority to everything.
