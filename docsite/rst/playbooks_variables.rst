@@ -311,6 +311,39 @@ To get a random list from an existing  list::
 
 note that when used with a non 'listable' item it is a noop, otherwise it always returns a list
 
+
+.. _math_stuff:
+
+Math
+--------------------
+.. versionadded:: 1.9
+
+
+To see if something is actually a number::
+
+    {{ myvar | isnan }}
+
+Get the logarithm (default is e)::
+
+    {{ myvar | log }}
+
+Get the base 10 logarithm::
+
+    {{ myvar | log(10) }}
+
+Give me the power of 2! (or 5)::
+
+    {{ myvar | pow(2) }}
+    {{ myvar | pow(5) }}
+
+Square root, or the 5th::
+
+    {{ myvar | root }}
+    {{ myvar | root(5) }}
+
+Note that jinja2 already provides some like abs() and round().
+
+
 .. _other_useful_filters:
 
 Other Useful Filters
@@ -911,7 +944,7 @@ The contents of each variables file is a simple YAML dictionary, like this::
 
 .. note::
    It's also possible to keep per-host and per-group variables in very
-   similar files, this is covered in :doc:`intro_patterns`.
+   similar files, this is covered in :ref:`splitting_out_vars`.
 
 .. _passing_variables_on_the_command_line:
 
